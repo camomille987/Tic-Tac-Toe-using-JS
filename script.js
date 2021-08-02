@@ -30,7 +30,7 @@ function startGame() {
 function turnClick(square) {
 // turn function will be used for displaying the 0 and x (occupation in the baord)
 
-    // cannot clciked on clikced place
+    // cannot clciked on clicked place
     if(typeof origBoard[square.target.id]  == 'number') {
         turn(square.target.id, huPlayer);
         if(!checkTie()) turn(bestSpot(), AiPlayer);    
@@ -97,7 +97,7 @@ function checkTie() {
 }
 
 function minimax(newBoard, player) {
-    var availSpots = emptySquares(newBoard);
+    var availSpots = emptySquares();
     if(checkWin(newBoard, huPlayer)) {
         return {score: -10};
     }
